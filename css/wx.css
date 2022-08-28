@@ -1,0 +1,135 @@
+/* S globel Rules */
+:root{
+    --main-color: #19c8fa;
+}
+*{
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+html{
+    scroll-behavior: smooth;
+}
+body{
+    font-family: 'Open Sans', sans-serif;
+}
+ul{
+    list-style: none;
+}
+.container{
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-left: auto;
+    margin-right: auto;
+}
+/* small */
+@media (min-width:768px){
+    .container{
+        width: 750px;
+    }
+}
+/* mediam */
+@media (min-width:992px){
+    .container{
+        width: 970px;
+    }
+}
+/* large */
+@media (min-width:1200px){
+    .container{
+        width: 1170px;
+    }
+}
+/* E globel Rules */
+/* sterd header */
+header{
+    position: absolute;
+}
+.container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    /* min-height: 97px; */
+}
+header .container::after{
+    content: "";
+    position: absolute;
+    height: 2px;
+    background-color: #a2a2a2;
+    bottom: 0;
+    width: calc(100% - 30px);
+    left: 15px;
+}
+header .logo img{
+    height: 40px;
+}
+header .container nav{
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+header .container ul{
+    display: flex;
+    
+}
+header .container ul li a{
+    display: block;
+    padding: 35px 10px;
+    color: rgb(30, 20, 20);
+    text-decoration: none;
+    font-size: 15px;
+    transition: 0.3s;
+    position: relative;
+    z-index: 3;
+}
+header .container ul li a.mos,
+header .container ul li a:hover{
+    color: var(--main-color);
+    border-bottom: 2px solid var(--main-color); 
+}
+header .container .form{
+    width: 40px;
+    height: 30px;
+    position: relative;
+    margin-left: 30px;
+    border-left: 1px solid black;
+}
+.container .form i{
+    position: absolute;
+    font-size: 20px;
+    transform: translateY(-50%);
+    top: 50%;
+    right: 0;
+}
+header .container nav .mosticon{
+    font-size: 22px;
+    color: black;
+}
+@media(min-width:768px){
+    header .container nav .mosticon{
+        display: none;
+    }
+}
+@media(max-width:767px){
+    header .container ul{
+        display: none;
+    }
+    header .container nav .mosticon + ul{
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: #a2a2a2;
+
+    }
+    header .container ul li a{
+        padding: 15px;
+    }
+}
+/* end header */
